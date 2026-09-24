@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Bestiário de D&D 5e: busque criaturas por nome, tipo, tamanho e nível de desafio.">
+  <title>Bestiário de D&amp;D</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400;1,700&family=Alegreya+SC:wght@700&family=Alegreya+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Bestiário</h1>
+    <p class="lede">Criaturas do SRD de D&amp;D 5e. Busque, filtre e abra a ficha completa sem sair da página.</p>
+  </header>
+
+  <main class="layout">
+    <section class="browser" id="browser" aria-label="Busca e lista de criaturas">
+      <div class="field">
+        <label class="field-label" for="search">Buscar por nome</label>
+        <input id="search" type="search" placeholder="Ex.: dragon, goblin, lich" autocomplete="off" spellcheck="false">
+      </div>
+
+      <div class="filters">
+        <div class="field">
+          <label class="field-label" for="filter-type">Tipo</label>
+          <select id="filter-type"><option value="">Todos</option></select>
+        </div>
+        <div class="field">
+          <label class="field-label" for="filter-size">Tamanho</label>
+          <select id="filter-size"><option value="">Todos</option></select>
+        </div>
+        <div class="field field-wide">
+          <label class="field-label" for="filter-cr">Nível de Desafio</label>
+          <select id="filter-cr"><option value="">Todos</option></select>
+        </div>
+      </div>
+
+      <div class="result-bar">
+        <p id="result-count" role="status"></p>
+        <div class="result-actions">
+          <button type="button" class="btn" data-action="clear">Limpar</button>
+          <button type="button" class="btn" data-action="random">Sortear</button>
+        </div>
+      </div>
+      <p id="notice" class="notice" hidden></p>
+
+      <div id="list" class="list-wrap"></div>
+    </section>
+
+    <section id="detail" class="viewer" tabindex="-1" aria-label="Ficha da criatura"></section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Conteúdo do System Reference Document 5.1, da Wizards of the Coast, sob a licença
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY-4.0</a>.
+      Dados obtidos da <a href="https://www.dnd5eapi.co/" target="_blank" rel="noopener">D&amp;D 5e API</a>.
+    </p>
+  </footer>
+
+  <noscript><p class="noscript">Este bestiário precisa de JavaScript para funcionar.</p></noscript>
+
+  <script type="module" src="ui.js"></script>
+</body>
+</html>

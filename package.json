@@ -1,0 +1,8 @@
+{
+  "name": "dnd-bestiary",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:data": "node build-bestiary.mjs"
+  }
+}
